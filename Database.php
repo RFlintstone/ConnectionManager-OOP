@@ -62,3 +62,12 @@ class Database
             $statement->execute();
     }
 }
+?>
+
+<!--
+Made by Ruben Flinterman aka RFlintstone
+Twitter: @rubenflintstone - https://twitter.com/rubenflintstone
+Gitgub: RFlintstone - https://github.com/rflintstone
+Twitch: RFlintstone - https://twitch.tv/rflintstone
+Twitch: GameIncluded - https://twitch.tv/gameincluded
+-->
