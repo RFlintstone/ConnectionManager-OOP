@@ -8,7 +8,7 @@ class Database
     private $db_username;
     private $db_password;
 
-    private $debugmode = false;
+    private $debugmode = false; //Debugmode is off by default.
 
     /**
      * @var PDO
@@ -38,18 +38,22 @@ class Database
         }
         catch (PDOException $e)
         {
-            exit('Error Connecting To DataBase');
+            //This will be displayed when the script can not connect to one or multiple databases, even when debug mode is disabled
+            exit('Error connecting to one or multiple databases. Please check your database credentials.');
         }
     }
 
-    public function debug($debugmode)
+    public function dbdebug($debugmode)
     {
-        $this->debugmode = $debugmode;
-    }
+        if (is_bool($debugmode)) {
+            $this->debugmode = $debugmode; //Sets debugmode to either true or false
 
-    public function checkdebug()
-    {
-        return $this->debugmode;
+            if ($this->db && $debugmode == true) {
+                echo 'Connected!'; //Only will be displayed when debugmode is enabled
+            }
+        } else {
+            echo 'Debug mode must be either True or false';
+        }
     }
 
     public function query($query)

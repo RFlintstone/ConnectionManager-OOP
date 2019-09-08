@@ -1,17 +1,21 @@
 <?php
+//Calls the dependency for connectionmanager. (Needs PHP >=7.0)
 require 'Database.php';
 
+//Sets credentials for the next connect function.
 $pdo = new Database('localhost','test1','root','');
+//Tells code to connect with the last credentials that are set.
 $conn = $pdo->connect();
+//Sets query for the last connection that is set.
+$pdo->query( 'INSERT INTO users (firstname, lastname, age) VALUES ("Tineke", "Ipsum2", 35)');
 
-$pdo->query( 'INSERT INTO users (firstname, lastname, age) VALUES ("Lorem", "Ipsum2", 35)');
 
+//Sets credentials for the next connect function.
 $pdo = new Database('localhost','test2','root','');
+//Tells code to connect with the last credentials that are set.
 $conn = $pdo->connect();
-$pdo->query( 'INSERT INTO users (firstname, lastname, age) VALUES ("Lorem", "Ipsum2", 35)');
+//Sets query for the last connection that is set.
+$pdo->query( 'INSERT INTO users (firstname, lastname, age) VALUES ("Tineke", "Ipsum2", 35)');
 
-$pdo->debug(true);
-if ($pdo && $pdo->checkdebug() == true){
-    echo 'Connected!';
-}
-
+//Sets debugmode on or of. On is true and off is false.
+$pdo->dbdebug(true);
