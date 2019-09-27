@@ -26,4 +26,4 @@
 	$pdo->dbdebug(true);
 ```
 ## To Do
-- [x] Fixing bug with select query - $pdo->query() is not able to fetch data from DB
+- [ ] Fixing bug with select query - $pdo->query() is not able to fetch data from DB
