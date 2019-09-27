@@ -25,3 +25,5 @@
 	//Sets debugmode on or of. On is true and off is false (optional).
 	$pdo->dbdebug(true);
 ```
+## To Do
+- [x] Fixing bug with select query - $pdo->query() is not able to fetch data from DB
