@@ -20,7 +20,7 @@
 	$conn = $pdo->connect();
 	
 	//Sets query for the last connection that is set.
-	$pdo->query( 'INSERT INTO users (firstname, lastname, age) VALUES ("Tineke", "Ipsum2", 35)');
+	$pdo->query( 'INSERT INTO users (firstname, lastname, age) VALUES ("Lorem", "Ipsum", 35)');
 	
 	//Sets debugmode on or of. On is true and off is false (optional).
 	$pdo->dbdebug(true);
